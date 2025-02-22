@@ -355,15 +355,27 @@ table td {
     padding: 8px;
   }
 
-  .left-arrow {
-    display: none;
+  .left-arrow,
+  .right-arrow {
+    display: none !important;
   }
 
-  .right-arrow {
-    display: none;
-  }
   .contact-details {
     width: 100% !important;
+  }
+
+  /* Full-Screen Gallery Section */
+  .gallery-section {
+    height: 60vh;
+  }
+
+  /* Full-Screen Images */
+  .gallery-img {
+    height: 60vh;
+  }
+
+  .navbar-brand {
+    margin-top: -10px;
   }
 }
 
@@ -371,6 +383,23 @@ table td {
 @media (max-width: 480px) {
   .hero-bg {
     object-fit: cover;
+  }
+  header {
+    height: 40px;
+  }
+
+  .navbar-brand {
+    margin-top: -20px;
+  }
+
+  /* Full-Screen Gallery Section */
+  .gallery-section {
+    height: 50vh;
+  }
+
+  /* Full-Screen Images */
+  .gallery-img {
+    height: 50vh;
   }
 }
 
