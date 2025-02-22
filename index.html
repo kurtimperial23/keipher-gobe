@@ -170,6 +170,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
+              loading="lazy"
               src="./images/keiHero.png"
               class="d-block w-100 gallery-img"
               alt="Gallery Image 1"
@@ -177,6 +178,7 @@
           </div>
           <div class="carousel-item">
             <img
+              loading="lazy"
               src="https://placehold.co/1600x900"
               class="d-block w-100 gallery-img"
               alt="Gallery Image 2"
@@ -184,6 +186,7 @@
           </div>
           <div class="carousel-item">
             <img
+              loading="lazy"
               src="https://placehold.co/1600x900"
               class="d-block w-100 gallery-img"
               alt="Gallery Image 3"
@@ -364,7 +367,7 @@
           const projectCard = `
               <div class="col-md-4 mb-4">
                 <div class="project-card">
-                  <img src="${project.image}" class="project-img" alt="${project.title}" />
+                  <img   loading="lazy" src="${project.image}" class="project-img" alt="${project.title}" />
                   <div class="project-info">
                     <h3 class="project-title">${project.title}</h3>
                     <p class="project-desc">${project.description}</p>
@@ -382,7 +385,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <img src="${project.detailsImage}" class="img-fluid" alt="${project.title} Details"/>
+                      <img loading="lazy" src="${project.detailsImage}" class="img-fluid" alt="${project.title} Details"/>
                       <p>${project.detailedDescription}</p>
                     </div>
                     <div class="modal-footer">
