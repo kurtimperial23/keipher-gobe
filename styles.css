@@ -386,6 +386,7 @@ table td {
   }
   header {
     height: 40px;
+    margin-bottom: 20px;
   }
 
   .navbar-brand {
