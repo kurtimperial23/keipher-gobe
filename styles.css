@@ -43,9 +43,12 @@ header {
   height: 60px;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 1050;
+  padding-top: -1px;
 }
-
+.modal {
+  z-index: 1040; /* Modal z-index lower than navbar */
+}
 header h4 {
   color: #fcb640;
   font-weight: 100;
@@ -76,6 +79,7 @@ nav a {
   color: var(--color-2);
   margin: 0 20px;
   padding: 10px 10px;
+  justify-content: center;
 }
 
 nav a:hover {
@@ -387,7 +391,6 @@ table td {
   header {
     height: 40px;
     margin-bottom: 20px;
-    padding-top: 2px;
   }
 
   .navbar-brand {
@@ -409,4 +412,8 @@ table td {
   .navbar-toggler {
     display: none;
   }
+}
+/* Prevent layout shifts */
+body.modal-open {
+  padding-right: 0 !important; /* Remove extra padding for the scrollbar */
 }

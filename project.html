@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="sticky-top">
+      <nav class="container navbar navbar-expand-lg">
+        <a class="navbar-brand text-white fw-normal" href="#"
+          >KEIPHER A. GOBE</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fa-solid fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- <li class="nav-item">
+                <a class="nav-link text-white active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact">Contact</a>
+              </li> -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="pt-5">
+      <div class="container-fluid">
+        <h1 id="project-title" class="text-center"></h1>
+        <p id="project-description" class="text-center"></p>
+
+        <div class="gallery" id="gallery"></div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" />
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const project = JSON.parse(localStorage.getItem("selectedProject"));
+
+        if (project) {
+          document.getElementById("project-title").innerText = project.title;
+          document.getElementById("project-description").innerText =
+            project.description;
+
+          const galleryContainer = document.getElementById("gallery");
+          project.images.forEach((image) => {
+            const imgElement = document.createElement("img");
+            imgElement.src = image;
+            imgElement.className = "gallery-img";
+            imgElement.onclick = () => openLightbox(image);
+            galleryContainer.appendChild(imgElement);
+          });
+        } else {
+          document.body.innerHTML =
+            "<h1 class='text-center'>Project Not Found</h1>";
+        }
+      });
+
+      function openLightbox(src) {
+        document.getElementById("lightbox-img").src = src;
+        document.getElementById("lightbox").style.display = "flex";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
